@@ -24,22 +24,6 @@ class EmailsController < ApplicationController
     end
   end
 
-  # GET /emails/new
-  # GET /emails/new.xml
-  def new
-    @email = Email.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @email }
-    end
-  end
-
-  # GET /emails/1/edit
-  def edit
-    @email = Email.find(params[:id])
-  end
-
   # POST /emails
   # POST /emails.xml
   def create
@@ -49,33 +33,5 @@ class EmailsController < ApplicationController
     @email.subject = message.subject
     @email.body = message.body.decoded
     @email.save
-  end
-
-  # PUT /emails/1
-  # PUT /emails/1.xml
-  def update
-    @email = Email.find(params[:id])
-
-    respond_to do |format|
-      if @email.update_attributes(params[:email])
-        format.html { redirect_to(@email, :notice => 'Email was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @email.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /emails/1
-  # DELETE /emails/1.xml
-  def destroy
-    @email = Email.find(params[:id])
-    @email.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(emails_url) }
-      format.xml  { head :ok }
-    end
   end
 end
