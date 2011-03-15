@@ -32,6 +32,8 @@ class EmailsController < ApplicationController
     @email = Email.new
     @email.subject = NKF.nkf("-J -w -m0", message.subject)
     @email.body = NKF.nkf("-J -w -m0", message.body.decoded)
-    @email.save
+    if @email.save
+      @email.tweet
+    end
   end
 end
