@@ -5,6 +5,31 @@
     <title>調布安全・安心ツイート</title>
 </head>
 <body>
-  <a href="http://twitter.com/chofu_anzen">調布安全・安心ツイート</a>
+<pre>
+== 調布安全・安心ツイート(非公式)
+
+* 本サービスに調布市は関わっておりません。調布市在住の開発者個人が運営している非公式なサービスであることをご了承ください。
+
+調布安全・安心メール
+<a href="http://www.city.chofu.tokyo.jp/www/contents/1176118928608/">http://www.city.chofu.tokyo.jp/www/contents/1176118928608/</a>
+
+をツイートします。
+
+調布安全・安心メールのTwitterアカウント
+<a href="http://twitter.com/chofu_anzen">http://twitter.com/chofu_anzen</a>
+
+Heroku で運用しています。
+
+Heroku の Addon CloudMailin を有効にし、以下の環境変数を書き換えれば、他の自治体の同様なサービスにも適用できると思います。
+
+ACCESS_SECRET: Twitter アカウントのアクセスシークレット
+ACCESS_TOKEN: Twitter アカウントのアクセストークン
+CONSUMER_SECRET: Twitter アカウントのコンシューマーシークレット
+CONSUMER_TOKEN: Twitter アカウントのコンシューマーキー
+HOST_NAME: ホスト名
+
+開発者
+<a href="http://twitter.com/jishiha">http://twitter.com/jishiha</a>
+</pre>
 </body>
 </html>
