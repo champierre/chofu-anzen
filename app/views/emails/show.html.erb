@@ -7,7 +7,7 @@
 
 <p>
   <b>Body:</b>
-  <%= nl2br @email.body %>
+  <%= nl2br h(@email.body) %>
 </p>
 
 <%= link_to 'Back', emails_path %>
