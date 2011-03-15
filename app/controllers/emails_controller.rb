@@ -2,30 +2,10 @@ class EmailsController < ApplicationController
   require 'mail'
   skip_before_filter :verify_authenticity_token
 
-  # GET /emails
-  # GET /emails.xml
-  def index
-    @emails = Email.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @emails }
-    end
-  end
-
-  # GET /emails/1
-  # GET /emails/1.xml
   def show
     @email = Email.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @email }
-    end
   end
 
-  # POST /emails
-  # POST /emails.xml
   def create
     message = Mail.new(params[:message])
 
@@ -35,5 +15,7 @@ class EmailsController < ApplicationController
     if @email.save
       @email.tweet
     end
+
+    render :text => 'success', :status => 200 # a status of 404 would reject the mail
   end
 end
