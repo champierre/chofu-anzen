@@ -1,5 +1,5 @@
 class EmailsController < ApplicationController
-  require 'email'
+  require 'mail'
   skip_before_filter :verify_authenticity_token
 
   # GET /emails
