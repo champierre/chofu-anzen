@@ -7,6 +7,6 @@ class Email < ActiveRecord::Base
     tauth = Twitter::OAuth.new(ENV['CONSUMER_TOKEN'], ENV['CONSUMER_SECRET'])
     tauth.authorize_from_access(ENV['ACCESS_TOKEN'], ENV['ACCESS_SECRET'])
     client = Twitter::Base.new(tauth)
-    client.update("#{truncate(body, :length => 60)} #{Time.now} #{email_url(self)}")
+    client.update("#{truncate(body, :length => 100)} #{email_url(self)}")
   end
 end
