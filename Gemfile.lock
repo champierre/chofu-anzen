@@ -30,8 +30,12 @@ GEM
     activesupport (3.0.3)
     arel (2.0.7)
     builder (2.1.2)
+    crack (0.1.6)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    hashie (0.2.0)
+    httparty (0.5.2)
+      crack (= 0.1.6)
     i18n (0.5.0)
     mail (2.2.15)
       activesupport (>= 2.3.6)
@@ -39,6 +43,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    oauth (0.4.1)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -65,7 +70,13 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
+    twitter (0.9.5)
+      hashie (~> 0.2.0)
+      httparty (~> 0.5.0)
+      oauth (>= 0.3.5)
+      yajl-ruby (~> 0.7.0)
     tzinfo (0.3.24)
+    yajl-ruby (0.7.6)
 
 PLATFORMS
   ruby
@@ -73,3 +84,4 @@ PLATFORMS
 DEPENDENCIES
   rails (= 3.0.3)
   sqlite3-ruby
+  twitter
