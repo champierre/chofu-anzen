@@ -30,8 +30,8 @@ class EmailsController < ApplicationController
     message = Mail.new(params[:message])
 
     @email = Email.new
-    @email.subject = message.subject
-    @email.body = message.body.decoded
+    @email.subject = NKF.nkf("-J -w -m0", message.subject)
+    @email.body = NKF.nkf("-J -w -m0", message.body.decoded)
     @email.save
   end
 end
