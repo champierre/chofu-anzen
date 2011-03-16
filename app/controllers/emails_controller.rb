@@ -3,6 +3,7 @@ class EmailsController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def show
+    response.headers['Cache-Control'] = 'public, max-age=864000'
     @email = Email.find(params[:id])
   end
 
