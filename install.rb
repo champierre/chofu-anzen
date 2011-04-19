@@ -26,6 +26,8 @@ access_secret.chop!
 _run "heroku create #{app_name}"
 _run "heroku addons:add cloudmailin:test"
 _run "heroku config:add ACCESS_SECRET=#{access_secret} ACCESS_TOKEN=#{access_token} CONSUMER_SECRET=#{consumer_secret} CONSUMER_TOKEN=#{consumer_token} HOST_NAME=#{app_name}.heroku.com"
+_run "git add ."
+_run "git commit -a -m 'initial commit to heroku'"
 _run "git push heroku master"
 _run "heroku rake db:migrate"
 puts "Log in cloudmailin and set http://#{app_name}.heroku.com/emails as the target."
